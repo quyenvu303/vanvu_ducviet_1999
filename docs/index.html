@@ -24,11 +24,11 @@
     <meta property="og:description"
         content="Đức Việt &amp; Hoàng Vân - Our wedding date: 2025-03-01 | Tình yêu đích thực và chân chính hiếm đến nỗi khi bạn bắt gặp nó dưới bất kỳ hình thức nào, đó là một điều tuyệt vời, được trân trọng hoàn toàn dưới bất kỳ hình thức nào">
     <meta property="og:image"
-        content="../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/09f2a620df60607874fd0bf8b238dc22.jpg">
+        content="../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/09f2a620df60607874fd0bf8b238dc22.jpg">
     <meta property="og:image:url"
-        content="../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/09f2a620df60607874fd0bf8b238dc22.jpg">
+        content="../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/09f2a620df60607874fd0bf8b238dc22.jpg">
     <meta property="og:image:secure_url"
-        content="../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/09f2a620df60607874fd0bf8b238dc22.jpg">
+        content="../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/09f2a620df60607874fd0bf8b238dc22.jpg">
     <!-- Fav and touch icons -->
     <link rel="shortcut icon" type="image/x-icon" href="https://iwedding.info/favicon.ico">
     <link rel="manifest" href="templates/template19/images/fav_touch_icons/manifest.json">
@@ -55,27 +55,49 @@
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 
     <style>
-        /* CSS đảm bảo nút hiển thị rõ ràng */
+        /* Định dạng nút tròn */
         .music-button {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            padding: 10px 20px;
+            width: 60px;
+            height: 60px;
             background: yellow;
             border: 2px solid black;
-            color: black;
-            font-size: 16px;
-            font-weight: bold;
+            border-radius: 50%; /* Làm tròn */
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
-            border-radius: 5px;
             z-index: 9999;
+            transition: background 0.3s, transform 0.3s ease-in-out;
+            animation: rotate 3s linear infinite; /* Luôn xoay */
         }
 
-        /* Hiệu ứng khi hover vào */
+        /* Hiệu ứng xoay tròn liên tục */
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Hiệu ứng rung rinh */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0) rotate(0deg); }
+            25% { transform: translateX(-3px) rotate(0deg); }
+            50% { transform: translateX(3px) rotate(0deg); }
+            75% { transform: translateX(-3px) rotate(0deg); }
+        }
+
+        /* Khi thêm class "shake", nút sẽ rung rinh */
+        .shake {
+            animation: shake 0.5s infinite ease-in-out, rotate 3s linear infinite;
+        }
+
+        /* Khi hover, nút đổi màu */
         .music-button:hover {
             background: orange;
-            color: white;
         }
+
     </style>
 </head>
 <script type="text/javascript">
@@ -89,7 +111,10 @@
     </audio>
 
     <!-- Nút bật nhạc nếu autoplay bị chặn -->
-    <button id="musicButton" class="music-button" onclick="toggleMusic()">Bật Nhạc</button>
+    <button id="musicButton" class="music-button" onclick="toggleMusic()">
+        <img src="music/musical-note.png" alt="Bật Nhạc" width="30">
+    </button>
+    
 
     <!-- BEGIN PRELOADER -->
     <div id="preloader" style="z-index:99999">
@@ -179,13 +204,13 @@
                     <div class="element col-md-6 col-xl-4 offset-xl-2" data-animation-direction="from-left"
                         data-animation-delay="300">
                         <div class="image">
-                            <img src="../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/s.jpg"
+                            <img src="../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/s.jpg"
                                 alt="" width="600" height="714" />
                             <div class="hover-info neela-style">
                                 <div class="content">
                                     <h3>Nguyễn Đức Việt<small>The Groom</small></h3>
                                     <p>Việt là một người con <a class="button-see"
-                                            data-src="../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/8bb97c084a380988a0150be5259afbae.jpg"
+                                            data-src="../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/8bb97c084a380988a0150be5259afbae.jpg"
                                             data-content="" data-instagram="" data-twitter="" data-facebook=""
                                             data-name="Nguyễn Đức Việt" style="font-size:14px;cursor: pointer"></a>
                                     </p>
@@ -203,14 +228,14 @@
                     <div class="element col-md-6 col-xl-4" data-animation-direction="from-right"
                         data-animation-delay="400">
                         <div class="image">
-                            <img src="../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/avt_codau.jpg" alt=""
+                            <img src="../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/avt_codau.jpg" alt=""
                                 width="600" height="714" />
                             <div class="hover-info neela-style">
                                 <div class="content">
                                     <h3>Vũ Thị Hoàng Vân<small>The Bride</small></h3>
                                     <p>Vân cô gái nhỏ nhắn, nhưng rất hiểu chuyện và rất biết
                                         cách quan tâm, chăm ...<a class="button-see"
-                                            data-src="../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/avt_codau.jpg"
+                                            data-src="../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/avt_codau.jpg"
                                             data-content="" data-instagram="" data-twitter="" data-facebook=""
                                             data-name="Trần Thị Hoàng Vân" style="font-size:14px;cursor: pointer"></a>
                                     </p>
@@ -244,7 +269,7 @@
         <!-- BEGIN OUR STORY TITLE SECTION -->
         <section id="our-story-title"
             class="parallax-background bg-color-overlay section-divider-bottom-2 padding-divider-top"
-            style="background-image: url(../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/_CIEL9403.jpg)">
+            style="background-image: url(../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/_CIEL9403.jpg)">
             <div class="section-divider-top-1 off-section"></div>
             <!-- The class "section-divider-top-1" can also be applied to the tag <section>. In this case, it was added on a new <div> because the tag <section> have all pseudo elements (::after and ::before) in use. -->
             <div class="container">
@@ -271,7 +296,7 @@
                                     data-animation-delay="250">
                                     <div class="timeline-gallery-del">
                                         <div class="item text-center">
-                                            <img src="../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/cauchuyen_1.jpg"
+                                            <img src="../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/cauchuyen_1.jpg"
                                                 alt="Kỉ niệm lần đầu chúng mình gặp nhau" class="w-100 h-auto"
                                                 style="max-width:500px;" />
                                         </div>
@@ -295,7 +320,7 @@
                                     data-animation-delay="250">
                                     <div class="timeline-gallery-del">
                                         <div class="item text-center">
-                                            <img src="../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/cauchuyen_2.jpg"
+                                            <img src="../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/cauchuyen_2.jpg"
                                                 alt="Ngày của sự khởi đầu" class="w-100 h-auto"
                                                 style="max-width:500px;" />
                                         </div>
@@ -319,7 +344,7 @@
                                     data-animation-delay="250">
                                     <div class="timeline-gallery-del">
                                         <div class="item text-center">
-                                            <img src="../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/cauchuyen_3.jpg"
+                                            <img src="../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/cauchuyen_3.jpg"
                                                 alt="Lần hẹn hò đầu tiên của chúng mình" class="w-100 h-auto"
                                                 style="max-width:500px;" />
                                         </div>
@@ -343,7 +368,7 @@
                                     data-animation-delay="250">
                                     <div class="timeline-gallery-del">
                                         <div class="item text-center">
-                                            <img src="../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/cauchuyen_4.jpg"
+                                            <img src="../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/cauchuyen_4.jpg"
                                                 alt="Lần đầu chúng mình đi chơi cùng nhau" class="w-100 h-auto"
                                                 style="max-width:500px;" />
                                         </div>
@@ -367,7 +392,7 @@
                                     data-animation-delay="250">
                                     <div class="timeline-gallery-del">
                                         <div class="item text-center">
-                                            <img src="../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/cauchuyen_5.jpg"
+                                            <img src="../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/cauchuyen_5.jpg"
                                                 alt="Ngày cô ấy nói 'Em đồng ý' " class="w-100 h-auto"
                                                 style="max-width:500px;" />
                                         </div>
@@ -391,7 +416,7 @@
                                     data-animation-delay="250">
                                     <div class="timeline-gallery-del">
                                         <div class="item text-center">
-                                            <img src="../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/cauchuyen_6.jpg"
+                                            <img src="../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/cauchuyen_6.jpg"
                                                 alt="Ngày câu chuyện tình yêu của chúng mình bước sang trang mới"
                                                 class="w-100 h-auto" style="max-width:500px;" />
                                         </div>
@@ -415,7 +440,7 @@
                                     data-animation-delay="250">
                                     <div class="timeline-gallery-del">
                                         <div class="item text-center">
-                                            <img src="../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/cauchuyen_7.jpg"
+                                            <img src="../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/cauchuyen_7.jpg"
                                                 alt="Ngày chung đôi" class="w-100 h-auto" style="max-width:500px;" />
                                         </div>
                                     </div>
@@ -454,7 +479,7 @@
         <!-- BEGIN THE WEDDING SECTION -->
         <section id="invitation"
             class="parallax-background bg-color-overlay padding-divider-top section-divider-bottom-1"
-            style="background-image: url(../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/_CIEL9033.jpg);">
+            style="background-image: url(../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/_CIEL9033.jpg);">
             <div class="section-divider-top-1 off-section"></div>
             <!-- The class "section-divider-top-1" can also be applied to the tag <section>. In this case, it was added on a new <div> because the tag <section> have all pseudo elements (::after and ::before) in use. -->
             <div class="container">
@@ -510,217 +535,217 @@
                         <div class="gallery-container gallery-fancybox masonry-gallery">
                             <script type="text/javascript">
                                 photoGalleries.push({
-                                    src: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL8987.jpg",
-                                    thumb: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL8987.jpg",
+                                    src: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL8987.jpg",
+                                    thumb: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL8987.jpg",
                                     subHtml: `<div class="lg-sub-html"><h4></h4></div>`
                                 });
                             </script>
                             <div class="grid grid-item btn-see-more-gallery" data-index="0">
-                                <img src="../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL8987.jpg"
+                                <img src="../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL8987.jpg"
                                     alt class="img img-responsive">
                             </div>
                             
 
                             <div class="grid grid-item btn-see-more-gallery" data-index="1">
-                                <img src="../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9033.jpg"
+                                <img src="../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9033.jpg"
                                     alt class="img img-responsive">
                             </div>
                             <script type="text/javascript">
                                 photoGalleries.push({
-                                    src: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9033.jpg",
-                                    thumb: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9033.jpg",
+                                    src: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9033.jpg",
+                                    thumb: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9033.jpg",
                                     subHtml: `<div class="lg-sub-html"><h4></h4></div>`
                                 });
                             </script>
 
                             <div class="grid grid-item btn-see-more-gallery" data-index="2">
-                                <img src="../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9086.jpg"
+                                <img src="../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9086.jpg"
                                     alt class="img img-responsive">
                             </div>
                             <script type="text/javascript">
                                 photoGalleries.push({
-                                    src: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9086.jpg",
-                                    thumb: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9086.jpg",
+                                    src: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9086.jpg",
+                                    thumb: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9086.jpg",
                                     subHtml: `<div class="lg-sub-html"><h4></h4></div>`
                                 });
                             </script>
 
                             <div class="grid grid-item btn-see-more-gallery" data-index="3">
-                                <img src="../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9154.jpg"
+                                <img src="../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9154.jpg"
                                     alt class="img img-responsive">
                             </div>
                             <script type="text/javascript">
                                 photoGalleries.push({
-                                    src: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9154.jpg",
-                                    thumb: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9154.jpg",
+                                    src: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9154.jpg",
+                                    thumb: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9154.jpg",
                                     subHtml: `<div class="lg-sub-html"><h4></h4></div>`
                                 });
                             </script>
 
                             <div class="grid grid-item btn-see-more-gallery" data-index="4">
-                                <img src="../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9219.jpg"
+                                <img src="../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9219.jpg"
                                     alt class="img img-responsive">
                             </div>
                             <script type="text/javascript">
                                 photoGalleries.push({
-                                    src: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9219.jpg",
-                                    thumb: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9219.jpg",
+                                    src: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9219.jpg",
+                                    thumb: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9219.jpg",
                                     subHtml: `<div class="lg-sub-html"><h4></h4></div>`
                                 });
                             </script>
 
                             <div class="grid grid-item btn-see-more-gallery" data-index="5">
-                                <img src="../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9266.jpg"
+                                <img src="../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9266.jpg"
                                     alt class="img img-responsive">
                             </div>
                             <script type="text/javascript">
                                 photoGalleries.push({
-                                    src: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9266.jpg",
-                                    thumb: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9266.jpg",
+                                    src: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9266.jpg",
+                                    thumb: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9266.jpg",
                                     subHtml: `<div class="lg-sub-html"><h4></h4></div>`
                                 });
                             </script>
 
                             <div class="grid grid-item btn-see-more-gallery" data-index="6">
-                                <img src="../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9297.jpg"
+                                <img src="../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9297.jpg"
                                     alt class="img img-responsive">
                             </div>
                             <script type="text/javascript">
                                 photoGalleries.push({
-                                    src: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9297.jpg",
-                                    thumb: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9297.jpg",
+                                    src: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9297.jpg",
+                                    thumb: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9297.jpg",
                                     subHtml: `<div class="lg-sub-html"><h4></h4></div>`
                                 });
                             </script>
 
                             <div class="grid grid-item btn-see-more-gallery" data-index="7">
-                                <img src="../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9341.jpg"
+                                <img src="../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9341.jpg"
                                     alt class="img img-responsive">
                             </div>
                             <script type="text/javascript">
                                 photoGalleries.push({
-                                    src: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9341.jpg",
-                                    thumb: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9341.jpg",
+                                    src: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9341.jpg",
+                                    thumb: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9341.jpg",
                                     subHtml: `<div class="lg-sub-html"><h4></h4></div>`
                                 });
                             </script>
 
                             <div class="grid grid-item btn-see-more-gallery" data-index="8">
-                                <img src="../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9403.jpg"
+                                <img src="../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9403.jpg"
                                     alt class="img img-responsive">
                             </div>
                             <script type="text/javascript">
                                 photoGalleries.push({
-                                    src: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9403.jpg",
-                                    thumb: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9403.jpg",
+                                    src: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9403.jpg",
+                                    thumb: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9403.jpg",
                                     subHtml: `<div class="lg-sub-html"><h4></h4></div>`
                                 });
                             </script>
 
                             <div class="grid grid-item btn-see-more-gallery" data-index="9">
-                                <img src="../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9412.jpg"
+                                <img src="../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9412.jpg"
                                     alt class="img img-responsive">
                             </div>
                             <script type="text/javascript">
                                 photoGalleries.push({
-                                    src: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9412.jpg",
-                                    thumb: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9412.jpg",
+                                    src: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9412.jpg",
+                                    thumb: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9412.jpg",
                                     subHtml: `<div class="lg-sub-html"><h4></h4></div>`
                                 });
                             </script>
 
                             <div class="grid grid-item btn-see-more-gallery" data-index="10">
-                                <img src="../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9489.jpg"
+                                <img src="../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9489.jpg"
                                     alt class="img img-responsive">
                             </div>
                             <script type="text/javascript">
                                 photoGalleries.push({
-                                    src: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9489.jpg",
-                                    thumb: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9489.jpg",
+                                    src: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9489.jpg",
+                                    thumb: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9489.jpg",
                                     subHtml: `<div class="lg-sub-html"><h4></h4></div>`
                                 });
                             </script>
 
                             <div class="grid grid-item btn-see-more-gallery" data-index="11">
-                                <img src="../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9554.jpg"
+                                <img src="../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9554.jpg"
                                     alt class="img img-responsive">
                             </div>
                             <script type="text/javascript">
                                 photoGalleries.push({
-                                    src: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9554.jpg",
-                                    thumb: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9554.jpg",
+                                    src: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9554.jpg",
+                                    thumb: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9554.jpg",
                                     subHtml: `<div class="lg-sub-html"><h4></h4></div>`
                                 });
                             </script>
 
                             <div class="grid grid-item btn-see-more-gallery" data-index="12">
-                                <img src="../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9560.jpg"
+                                <img src="../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9560.jpg"
                                     alt class="img img-responsive">
                             </div>
                             <script type="text/javascript">
                                 photoGalleries.push({
-                                    src: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9560.jpg",
-                                    thumb: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9560.jpg",
+                                    src: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9560.jpg",
+                                    thumb: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9560.jpg",
                                     subHtml: `<div class="lg-sub-html"><h4></h4></div>`
                                 });
                             </script>
 
                             <div class="grid grid-item btn-see-more-gallery" data-index="13">
-                                <img src="../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9565.jpg"
+                                <img src="../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9565.jpg"
                                     alt class="img img-responsive">
                             </div>
                             <script type="text/javascript">
                                 photoGalleries.push({
-                                    src: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9565.jpg",
-                                    thumb: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9565.jpg",
+                                    src: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9565.jpg",
+                                    thumb: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9565.jpg",
                                     subHtml: `<div class="lg-sub-html"><h4></h4></div>`
                                 });
                             </script>
 
                             <div class="grid grid-item btn-see-more-gallery" data-index="14">
-                                <img src="../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9632.jpg"
+                                <img src="../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9632.jpg"
                                     alt class="img img-responsive">
                             </div>
                             <script type="text/javascript">
                                 photoGalleries.push({
-                                    src: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9632.jpg",
-                                    thumb: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9632.jpg",
+                                    src: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9632.jpg",
+                                    thumb: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9632.jpg",
                                     subHtml: `<div class="lg-sub-html"><h4></h4></div>`
                                 });
                             </script>
 
                             <div class="grid grid-item btn-see-more-gallery" data-index="15">
-                                <img src="../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9634.jpg"
+                                <img src="../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9634.jpg"
                                     alt class="img img-responsive">
                             </div>
                             <script type="text/javascript">
                                 photoGalleries.push({
-                                    src: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9634.jpg",
-                                    thumb: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9634.jpg",
+                                    src: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9634.jpg",
+                                    thumb: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9634.jpg",
                                     subHtml: `<div class="lg-sub-html"><h4></h4></div>`
                                 });
                             </script>
 
                             <div class="grid grid-item btn-see-more-gallery" data-index="16">
-                                <img src="../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9637.jpg"
+                                <img src="../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9637.jpg"
                                     alt class="img img-responsive">
                             </div>
                             <script type="text/javascript">
                                 photoGalleries.push({
-                                    src: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9637.jpg",
-                                    thumb: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9637.jpg",
+                                    src: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9637.jpg",
+                                    thumb: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9637.jpg",
                                     subHtml: `<div class="lg-sub-html"><h4></h4></div>`
                                 });
                             </script>
 
                             <div class="grid grid-item btn-see-more-gallery" data-index="17">
-                                <img src="../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9639.jpg"
+                                <img src="../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9639.jpg"
                                     alt class="img img-responsive">
                             </div>
                             <script type="text/javascript">
                                 photoGalleries.push({
-                                    src: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9639.jpg",
-                                    thumb: "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9639.jpg",
+                                    src: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9639.jpg",
+                                    thumb: "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/galleries/_CIEL9639.jpg",
                                     subHtml: `<div class="lg-sub-html"><h4></h4></div>`
                                 });
                             </script>
@@ -738,7 +763,7 @@
         <!-- BEGIN WEDDING GIFTS SECTION -->
         <div id="events"></div>
         <section id="giftregistry" class="parallax-background section-bg-color"
-            style="padding:135px 0; background-image: url(../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/_CIEL9219.jpg);">
+            style="padding:135px 0; background-image: url(../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/_CIEL9219.jpg);">
             <div class="section-divider-top-4 off-section"></div>
             <div class="container">
                 <div class="row">
@@ -863,10 +888,8 @@
         function toggleMusic() {
             if (music.paused) {
                 music.play();
-                musicButton.textContent = "Tắt Nhạc"; // Đổi tên nút
             } else {
                 music.pause();
-                musicButton.textContent = "Bật Nhạc"; // Đổi lại khi tắt
             }
         }
 
@@ -895,9 +918,9 @@
 
     <script>
         var slidehow_images = [
-            "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/banner_3.jpg",
-            "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/banner_4.jpg",
-            "../cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/banner_1.jpg",
+            "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/banner_3.jpg",
+            "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/banner_4.jpg",
+            "../docs/cdn.biihappy.com/ziiweb/website/67bdf862d17c2e6cac0d843b/banner_1.jpg",
         ];
         var custom_color = "#7bc5ae";
         function sanitizeJsonString(jsonString) {
